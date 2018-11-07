@@ -1,33 +1,31 @@
   .about {
     position: relative;
     height: 100vh;
-    width: 100%;
+    width: 100vw;
+    background-color:#d0eaff;
+  }
+  
+  .about.container-fluid {
+    padding: 5vh 5vw;
   }
 
-  .about-content {
-    height: 100%;
-    padding: 0 10vw;
-    position: absolute;
-    top: 10%;
-    left: 0%;
+  .about-nav {
+    height: 20%;
+    width: 90%;
+    position: relative;
   }
-  .about-content.active {
-    -webkit-transform: translateX(0%);
-    transform: translateX(0%);
-    opacity: 1;
-  }
-
-  .about-content-sub {
-    display: none;
-  }
+  
   .about-nav-button {
     height: auto;
-    padding: 1vh 1vw;
+    padding: 1vh 0;
     position: absolute;
-    top: 0;
+    top: 25%;
     left: 0;
   }
 
+  .about-nav-button.button-parent {
+    z-index: 2;
+  }
   .about-nav:hover .button-child-1{
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
@@ -44,6 +42,30 @@
     -webkit-transform: translateX(400%);
             transform: translateX(400%);
   }
+
+  .about-content {
+    height: 80%;
+    width: 90%;
+    position: absolute;
+    top: 20%;
+    padding: 5vh 0;
+  }
+  
+  .about-content.active {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    opacity: 1;
+  }
+
+  .about-content-sub-title {
+    padding-top: 3vh;
+  }
+
+  .about-content-sub {
+    display: none;
+  }
+
+  
   /* animation classes */
   .animate {
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
