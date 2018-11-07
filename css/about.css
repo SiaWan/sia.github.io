@@ -5,7 +5,7 @@
   }
 
   .about-content {
-    width: 100%;
+    height: 100%;
     padding: 0 10vw;
     position: absolute;
     top: 10%;
@@ -15,6 +15,10 @@
     -webkit-transform: translateX(0%);
     transform: translateX(0%);
     opacity: 1;
+  }
+
+  .about-content-sub {
+    display: none;
   }
   .about-nav-button {
     height: auto;

@@ -63,28 +63,42 @@ window.onload = function () {
 //about
 var nav_parent = $(".about-nav-button");
 var about_content = $(".about-content");
+var theme = $("#theme-1, #theme-2, #theme-3");
 
-nav_parent.click(function() {
+nav_parent.click(function () {
     about_content.removeClass("active");
     var num = $(this).attr("data-num") - 1;
     $(about_content[num]).addClass("active");
 });
+$(about_content[0]).addClass("active");
+
+theme.click(function () {
+    var id = $(this).attr("id");
+    $("#theme-content-1, #theme-content-2, #theme-content-3").hide();
+    if (id == "theme-1") {
+        $("#theme-content-1").slideDown("slow");
+    } else if (id == "theme-2") {
+        $("#theme-content-2").slideDown("slow");
+    } else if (id == "theme-3") {
+        $("#theme-content-3").slideDown("slow");
+    }
+})
 
 //faq
 $("li.question").siblings().hide();
 
-$("li.question").click(function(){
-  $(this).siblings().slideToggle();
- 
-  if ($(this).children().hasClass("rotate")) {
-   $(this).children().removeClass("rotate");
-   $(this).children().addClass("reverse");
-  } else if ($(this).children().hasClass("reverse")) {
-    $(this).children().removeClass("reverse");
-    $(this).children().addClass("rotate");
-  } else {
-    $(this).children().addClass("rotate");
-  }
-  
+$("li.question").click(function () {
+    $(this).siblings().slideToggle();
+
+    if ($(this).children().hasClass("rotate")) {
+        $(this).children().removeClass("rotate");
+        $(this).children().addClass("reverse");
+    } else if ($(this).children().hasClass("reverse")) {
+        $(this).children().removeClass("reverse");
+        $(this).children().addClass("rotate");
+    } else {
+        $(this).children().addClass("rotate");
+    }
+
 });
 
