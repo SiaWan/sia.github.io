@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Data and Media Hack 2019</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/faqpage.css">
+    <link rel="stylesheet" href="css/signUpBtn.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">DMH</a>
+            </div>
+            <div class="collapse navbar-collapse pullDown" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#schedule">SCHEDULE</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#">SPONSOR</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#banner"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Home Container -->
+    <section class="block-0" id="home">
+        <img src="img/homePage.png" alt="homePage">
+        <img src="img/logos.png" alt="logo" id="logos">
+    </section>
+    <!-- Banner Container -->
+    <section class="block-1" id="banner">
+        <!-- <img src="img/bannerBk.png"> -->
+        <p class="typewrite text-nowrap text-center" data-period="2000" data-type='[ "Learn Skills ", "Make New Friends", "Get Inspired", "Design Experiences" ]'>
+            <span></span>
+        </p>
+        <form action="#">
+            <div class="input">
+                <input type="text" class="button" id="email" name="email" placeholder="NAME@EXAMPLE.COM">
+                <input type="submit" class="button" id="submit" value="SIGN UP">
+            </div>
+        </form>
+    </section>
+    <!-- About Container -->
+    <section id="about" class="about container-fluid">
+        <div class="row about-nav">
+            <img data-num= 1 class="col-xs-2 col-sm-1 about-nav-button button-parent" src="img/aboutBtn.png">
+            <img data-num= 2 class="col-xs-2 col-sm-1 about-nav-button button-child-1 animate" src="img/aboutBtn.png">
+            <img data-num= 3 class="col-xs-2 col-sm-1 about-nav-button button-child-2 animate" src="img/aboutBtn.png">
+            <img data-num= 4 class="col-xs-2 col-sm-1 about-nav-button button-child-3 animate" src="img/aboutBtn.png">
+            <img data-num= 5 class="col-xs-2 col-sm-1 about-nav-button button-child-4 animate" src="img/aboutBtn.png">
+        </div>
+        <div class="row about-content animate delay-4 slideInLeft">
+            <div class="col-xs-12">
+                <h1>About DMH</h1>
+                <p>Data and Media Hack aims to mix students from various
+                    backgrounds and apply data, media, communication, business and all the skills learnt at
+                    school to the 72 hours project, solving the most urgent problems that faced by our society,
+                    and bringing value and impact through an innovative way. You can choose one topic below and
+                    embark on your data journey!</p>
+            </div>
+            <img class="col-xs-12 col-sm-4" src="../website/img/hack.png" alt="" />
+            <img class="col-xs-12 col-sm-4" src="../website/img/hack.png" alt="" />
+            <img class="col-xs-12 col-sm-4" src="../website/img/hack.png" alt="" />
+        </div>
+        <div class="row about-content animate delay-4 slideInLeft">
+            <div class="col-xs-12">
+                <h1>Our Sponsors</h1>
+                <p>Large companies and inspiring startups
+                    looking for talented students like you.</p>
+            </div>
+        </div>
+        <div class="row about-content animate delay-4 slideInLeft">
+                <div class="col-xs-12">
+                    <h1>Inspiring Events</h1>
+                    <p>Large companies and inspiring startups
+                        looking for talented students like you.</p>
+                </div>
+            </div>
+            <div class="row about-content animate delay-4 slideInLeft">
+                    <div class="col-xs-12">
+                        <h1>Food</h1>
+                        <p>Endless supplies of snacks and free meals!</p>
+                    </div>
+                </div>
+
+                <div class="row about-content animate delay-4 slideInLeft">
+                        <div class="col-xs-12">
+                            <h1>Hacks</h1>
+                            <p>Work on an amazing hack with help from your peers and mentors!</p>
+                        </div>
+                    </div>
+    </section>
+    <!-- faq Container -->
+    <section id="faq">
+        <h2 class="text-center faq-heading">See What People Ask to Us</h2>
+        <h1 class="text-center faq-subHeading">FAQS</h1>
+        <div class="faqs">
+            <div class="box-container-one">
+                <!-- Question 1 -->
+                <ul class="box">
+                    <li class="question">What do teams work?
+                        <span class="icon"><i class="fa fa-plus pull-right" aria-hidden="true"></i></span>
+                    </li>
+                    <ul>
+                        <li class="answer">We encourage people to work in teams of up to five. If you can’t find a team
+                            beforehand, worry not - there will be time to form teams after registration. But we highly
+                            encourage to form a team with various backgrounds, because the more diverse participating
+                            teams are, the more diverse and innovative solutions will be!
+
+                        </li>
+                    </ul>
+
+                </ul>
+
+                <!-- Question 2 -->
+                <ul class="box">
+                    <li class="question">What do I need to bring?
+                        <span class="icon"><i class="fa fa-plus pull-right" aria-hidden="true"></i></span>
+                    </li>
+                    <ul>
+                        <li class="answer">All you’ll need is a valid student ID, and your laptop & charger. We also
+                            recommend bringing some warm clothing, it gets a bit chilly at night!
+                        </li>
+                    </ul>
+                </ul>
+
+                <!-- Question 3 -->
+                <ul class="box">
+                    <li class="question">Will there be food?
+                        <span class="icon"><i class="fa fa-plus pull-right" aria-hidden="true"></i></span>
+                    </li>
+                    <ul>
+                        <li class="answer">Yes! We offer delicious food, snacks and coffee during the three day event.
+                    </ul>
+                </ul>
+
+                <!-- Question 4 -->
+                <ul class="box">
+                    <li class="question">Who can come?
+                        <span class="icon"><i class="fa fa-plus pull-right" aria-hidden="true"></i></span>
+                    </li>
+                    <ul>
+                        <li class="answer">Any undergraduate or graduate students is eligible to enter.
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+
+            <div class="box-container-two">
+                <!-- Question 5 -->
+                <ul class="box">
+                    <li class="question">What are the guidelines?
+                        <span class="icon"><i class="fa fa-plus pull-right" aria-hidden="true"></i></span>
+                    </li>
+                    <ul>
+                        <li class="answer">Yes we do have some guidelines on team formation and topic exploration. We
+                            will continuously update this website, so please don’t forget to check for updating
+                            information later! Or you can follow our DMC Facebook account for further updates.
+                        </li>
+                    </ul>
+                </ul>
+
+                <!-- Question 6 -->
+                <ul class="box">
+                    <li class="question">Get a question that’s not on the list?
+                        <span class="icon"><i class="fa fa-plus pull-right" aria-hidden="true"></i></span>
+                    </li>
+                    <ul>
+                        <li class="answer">Contact us at
+                            <a href="mailto:bu-dmc@hkbu.edu.hk">bu-dmc@hkbu.edu.hk</a>.
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="container-fluid text-center footer">
+        <p>Data and Media Hack 2019 <a href="#">Hong Kong Baptist University</a></p>
+    </footer>
+
+</body>
+<script src="js/index.js"></script>
+
+</html>
