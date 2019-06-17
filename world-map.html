@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Shifting Power From the Street to Digital Platform</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https:////d3js.org/d3.v3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="js/map-info.js"></script>
+    <style>
+        .country {
+            fill: none;
+            stroke: aliceblue;
+            stroke-width: 1;
+        }
+
+        .country:hover {
+            fill-opacity: 0.5;
+        }
+
+        #map {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        #meta {
+            position: absolute;
+            width: 100%;
+            padding: 1vw;
+            top: 60%;
+            font-family: Georgia;
+            background-color: rgb(240, 248, 255, 0.7);
+            pointer-events: none;
+        }
+
+        #meta h1 {
+            font-size: 5vw;
+            display: inline;
+        }
+
+        #meta span {
+            font-size: 180%;
+            color: steelblue;
+        }
+
+        #meta table {
+            margin-top: 20px;
+            font-size: 150%;
+        }
+
+        #meta td {
+            padding-right: 50px;
+        }
+
+        #tooltip {
+            position: absolute;
+            width: 20%;
+            height: 40%;
+            text-align: center;
+            background: rgb(0, 0, 0, 0.7);
+            border-radius: 25px;
+            padding: 10px;
+            opacity: 0;
+            pointer-events: none;
+            color: white;
+            font-family: Georgia;
+            z-index: 10;
+        }
+
+        #map svg {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+        #report {
+            padding-left: 15vw;
+            padding-right: 15vw;
+            padding-top: 15vh;
+            font-family: Georgia;
+            font-size: 150%;
+        }
+
+        #myChart {
+            width: 50%;
+            height: 20%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="map">
+        <svg></svg>
+        <div id="tooltip">
+        </div>
+        <div id="meta">
+            <h1><b> Power From the Street to Digital Platform </b></h1>
+            <span><i> ------ Young activists resist political repression through digital platform</i></span>
+            <table>
+                <tr>
+                    <td>
+                        Reporter: Maisy Mok, Mareen Santirad
+                    </td>
+                    <td>
+                        Developer: Sia Wan
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    </div>
+
+
+    <div id="report" class="container-fluid">
+        <p>Young activists, Ludwing Moncada from Nicaragua and Nanjira Sambuli from Kenya leverage digital media as a
+            tool to stand up against massive political repression and bring changes in the society.
+
+        </p>
+        <br>
+        <p>The two utilized digital media to engage and empower young people to connect and participate in the
+            political movement.
+        </p>
+        <br>
+        <p>“In term of policy change, we try to inform people about the issues of why the internet is expensive and
+            share the information for people to engage and use online and offline engagement for people to work
+            together and address some of the challenges.” Said Sambuli.
+        </p>
+        <br>
+        <p>“We started using our cell phones as if it is our weapon because information can change it all,” said Ludwig
+            Moncada, a political activist from northern Nicaragua.
+
+        </p>
+        <br>
+        <p>Days of mass protest in Nicaragua prompted in April 2018 has led to the death of at least <b class="text-danger">322</b>
+            people. <b class="text-danger">23</b> of
+            them were <b class="text-danger">children or teenagers</b>, and hundreds are criminalised according to <a
+                href="https://www.oas.org/en/iachr/media_center/PReleases/2018/187.asp">Inter-American Commission on
+                Human Rights</a>.
+
+        </p>
+        <br>
+        <p>That is the cause of standing against Nicaragua's political regime. Protesters hope to end Daniel Ortega’s,
+            president of Nicaragua, dictatorship. Furious Nicaraguans have called for strikes and occupied universities
+            to rise against Ortega’s authoritative punishment to people who oppose him.
+
+        </p>
+        <br>
+        <p>Moncada was amongst the protesters that want to put the death of young protesters on halt. He and his team
+            members founded HORA CE:RO, a political justice campaign that produces and spread political information
+            through the digital platform that caters to adolescent age 12 to 16.
+
+        </p>
+        <br>
+        <p>“Even though traditional media covered the situation, but it is simply not enough,” said Moncada.
+
+        </p>
+        <br>
+        <p>The campaign aims to spread the news about the protest to a larger audience and provide a safe space for
+            political involvement by transitioning from protesting on the street to online.
+
+        </p>
+        <br>
+        <p>Take “Piquetes” as an example, which means protesting in five minutes. This is HORA CE:RO’s new strategy to
+            show their opposition against the political regime. Netizens can share their short videos of them singing
+            the national anthem while holding the national flag to show agitation. Moncada said this can prevent
+            further killing of the youth.
+        </p>
+        <br>
+        <p>The campaign is highly active on social media platforms such as Twitter, Youtube and their own website.
+            Besides updates on news, the campaign shares digital art and videos posted by protesters on their platform.
+
+        </p>
+        <br>
+        <p>Moncada shares that every like, every retweet and every hashtag plays a part in empowering youth to get
+            their voices heard by policymakers.
+
+        </p>
+        <br>
+        <p>
+            Although a single tweet might seem insignificant the accumulative numbers of interactions in social media
+            have brought wider influence in youth social participation that has brought them out from typing in the
+            online world to voicing out and taking a strike in the real world.
+            Nanjira Sambuli, senior policy manager from the Web Foundation, Kenya used digital media to advocate for
+            digital equality locally and globally.
+
+        </p>
+        <br>
+        <p>
+            “We try to inform the public about the issues of why the internet is expensive and share the information
+            for people to engage and use online and offline engagement for people to work together and address the
+            challenges.” Said Sambuli.
+
+        </p>
+        <br>
+        <p>
+            Sambuli and her foundation able to advocate for policy change in her country through the use of digital
+            media.
+
+        </p>
+        <br>
+        <p>
+            “The WEB foundation successfully gets the UN to ratify what affordable internet and part of the process is
+            that the engagement of community to understand for themselves on a personal level - why the internet should
+            be affordable to you, here is the data that you can use to advocate for yourself and why there is a need to
+            address this issues.”
+        </p>
+        <br>
+        <p>
+            “In a country like Nigeria, the government trying to make the mobile phone more expensive. Through online
+            and offline engagement, we are able to lobby the government to create affordable internet.”
+
+        </p>
+        <br>
+        <p>“Using data - the story people share online and offline, compiling those and using those for actual
+            engagement have been very successful.” She added.
+        </p>
+        <br>
+        <p>
+            Tsetse Tleane, the Technical advisor from Gesellschaft fur Internationale Zusammenarbeit (GIZ), using
+            digital media to empower young people to create safer communities.
+        </p>
+        <br>
+        <p>
+            His organization mobilise and train young people to led violence prevention activities in South Africa.
+        </p>
+        <br>
+        <p>
+            “Media cooperate young people and it is important to let young people play the role they can play”
+        </p>
+        <br>
+        <p>
+            Marcela from Argentina said that online presence can be transformed into a real-life presence. She
+            recommended that youth should
+        </p>
+        <br>
+        <p>
+            According to Digital 2019 report, there are 5.11 billion mobile users, 4.35 billion internet users, and
+            3.48 billion social media users.
+        </p>
+    </div>
+    <canvas id="myChart"></canvas>
+    <script>
+        var width = $("#map svg").width();
+        var height = $("#map svg").height();
+
+        // define the map
+        var svg = d3.select("#map svg");
+
+        // projection
+        var projection = d3.geo.mercator()
+            .scale(width / 2 / Math.PI)
+            .translate([width / 2, height / 2]);
+
+        // path
+        var path = d3.geo.path()
+            .projection(projection);
+
+
+        // tooltip html
+        var tooltipWidth = $("#tooltip").width();
+        var tooltipHeight = $("#tooltip").height();
+
+        function tooltipHtml(data) {
+            var list = "";
+            data.info.forEach(element => {
+                list = list + "<dt>" + element.name + "</dt>"
+                    + "<dd>" + element.work + "</dd>"
+
+            });
+            return "<h4>" + data.name + "</h4><dl>" + list + "</dl>";
+        }
+
+        function mouseOver(d) {
+            if (d3.event.pageX <= (width - tooltipWidth))
+                d3.select("#tooltip")
+                    .style("left", (d3.event.pageX) + "px")
+            else
+                d3.select("#tooltip")
+                    .style("left", (d3.event.pageX - tooltipWidth) + "px")
+
+            if (d3.event.pageY <= (height - tooltipHeight))
+                d3.select("#tooltip")
+                    .style("top", (d3.event.pageY) + "px")
+            else
+                d3.select("#tooltip")
+                    .style("top", (d3.event.pageY - tooltipHeight) + "px")
+
+            d3.select("#tooltip").html(tooltipHtml(map_info.find(x => x.id === d.id)))
+
+            d3.select("#tooltip").transition().duration(200).style("opacity", .9);
+        }
+
+        function mouseOut() {
+            d3.select("#tooltip").transition().duration(500).style("opacity", 0);
+        }
+
+        // draw
+        var url = "http://enjalot.github.io/wwsd/data/world/world-110m.geojson";
+        d3.json(url, function (err, geojson) {
+            svg.selectAll(".country")
+                .data(geojson.features)
+                .enter()
+                .append("path")
+                .attr("class", "country")
+                .attr("d", function (d) { return path(d) })
+                .style("fill", function (d) { return d3.interpolate("#9ac6f0", "#04214d")(Math.round(100 * Math.random()) / 100) })
+                .on("mouseover", mouseOver).on("mouseout", mouseOut);
+        })
+
+        // bar chart
+        var ctx = document.getElementById("myChart");
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ["mobile", "Internet", "Social Media"],
+                datasets: [{
+                    label: 'Digital Users 2019 (in million)',
+                    data: [5.11, 4.35, 3.48],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: false,
+                scales: {
+                    xAxes: [{
+                        barPercentage: 0.5,
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
