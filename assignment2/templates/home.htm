@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Gift4You</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Gift4You</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="/giftCollection">Gift Collection</a></li>
+          <li><a href="/user">User Center</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+          <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<div class="jumbotron text-center">
+  <h1> {{message}} {{user}}!</h1>
+  <p>Explore our collection to find the best gift!</p>
+</div>
+
+<div class="container" style="text-align:center">
+  <div class="row">
+    <div class="col-sm-4">
+      <h4>Unique Brands</h4>
+      <p>Premium brands on Facebook and Instagram</p>
+      <p>Special handcraft gifts</p>
+    </div>
+    <div class="col-sm-4">
+      <h4>Personalized Recommendation</h4>
+      <p>Analysis based on rigorous survey</p>
+      <p>Recommendations for every occasion</p>
+    </div>
+    <div class="col-sm-4">
+      <h4>Cheaper Price</h4>
+      <p>Corporate with thousands of online shops</p>
+      <p>Offer you the best ever price</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

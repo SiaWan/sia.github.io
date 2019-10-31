@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Gift4You</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Gift4You</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/giftCollection">Gift Collection</a></li>
+            <li class="active"><a href="/user">User Center</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+          <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<div class="jumbotron text-center">
+  <h1>Welcome to user center</h1>
+</div>
+
+<div class="container">
+<button class="btn btn-lg btn-danger btn-block" id="btn1">Sign Up</button>
+<button class="btn btn-lg btn-warning btn-block" id='btn2'>Update</button>
+<button class="btn btn-lg btn-info btn-block" id='btn3'>Withdrawn</button>
+
+    <center id="signUp">
+        <form class="form-adduser" style="width:30%;" method="post" action="/adduser">
+            <h2 class="form-signin-heading">Sign Up</h2>
+            <label for="inputFname" class="sr-only">First Name</label>
+            <input type="text" name="fname" id="fname" class="form-control" placeholder="first name" required autofocus>
+            <label for="inputFname" class="sr-only">Last Name</label>
+            <input type="text" name="lname" id="lname" class="form-control" placeholder="last name" required autofocus>
+            <label for="inputDOB" class="sr-only">Date of Birth</label>
+            <input type="text" name="date_of_birth" id="date_of_birth" class="form-control" placeholder="YYYY-MM-DD" required>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" name="pwd" id="inputPassword" class="form-control" placeholder="Password" required>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>
+             </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+        </form>
+    </center>
+
+    <center id="update" style="display: none;">
+        <form class="form-adduser" style="width:30%;" method="post" action="/updateuser">
+            <h2 class="form-signin-heading">Update Profile</h2>
+            <label for="inputFname" class="sr-only">User ID</label>
+            <input type="text" name="record_id" id="record_id" class="form-control" placeholder="user ID" required autofocus>
+            <label for="inputFname" class="sr-only">First Name</label>
+            <input type="text" name="fname" id="fname" class="form-control" placeholder="first name" required autofocus>
+            <label for="inputFname" class="sr-only">Last Name</label>
+            <input type="text" name="lname" id="lname" class="form-control" placeholder="last name" required autofocus>
+            <label for="inputDOB" class="sr-only">Date of Birth</label>
+            <input type="text" name="date_of_birth" id="date_of_birth" class="form-control" placeholder="YYYY-MM-DD" required>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" name="pwd" id="inputPassword" class="form-control" placeholder="Password" required>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>
+             </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+        </form>
+    </center>
+
+    <center id="delete" style="display: none;">
+        <form class="form-adduser" style="width:30%;" method="post" action="/deleteuser">
+            <h2 class="form-signin-heading">Withdraw Account</h2>
+            <label for="inputFname" class="sr-only">User ID</label>
+            <input type="text" name="record_id" id="record_id" class="form-control" placeholder="user ID" required autofocus>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+        </form>
+    </center>
+
+</div>
+</body>
+<script>
+    $("#btn1").click(function(){
+        $("#signUp").show();
+        $("#update").hide();
+        $("#delete").hide();
+    });
+    $("#btn2").click(function(){
+        $("#signUp").hide();
+        $("#update").show();
+        $("#delete").hide();
+    });
+    $("#btn3").click(function(){
+        $("#signUp").hide();
+        $("#update").hide();
+        $("#delete").show();
+    });
+</script>
+</html>

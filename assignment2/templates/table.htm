@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Gift4You</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"
+</head>
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Gift4You</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="/">Home</a></li>
+          <li class="active"><a href="/giftCollection">Gift Collection</a></li>
+          <li><a href="/user">User Center</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+          <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<div class="jumbotron text-center">
+  <h1>Gift4You</h1>
+  <p>Explore our collection to find your best gift!</p>
+</div>
+<div class='container'>
+<table id="myTable" class="table table-striped" style="width:100%" >
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Picture</th>
+        <th>Price</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+       {% for row in  entries %}
+          <tr>
+            <td>{{ row["Name"] }}</td>
+            <td width="40%">
+                <div class="row">
+                    {% set pic = row["Pic"] %}
+                    {% for p in  pic %}
+                            <div class="col-sm-6">
+                                <img src= "{{p.url}}" alt="{{p.filename}}"  width="100%">
+                            </div>
+                    {% endfor %}
+                </div>
+            </td>
+            <td>${{ row["Price"] }}</td>
+            <td>{{ row["Notes"] }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+</div><!--end container-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+</body>
+</html>
