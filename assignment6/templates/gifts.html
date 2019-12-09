@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="py-5" id="gifts">
+    <div class="container">
+        <div class="row">
+            <div class="text-center mx-auto col-md-8">
+                <h1 class="mb-3 bg-light text-primary py-1">Our Gift Collection</h1>
+                <p class="lead">Tired of products in big shopping malls? Explore our special gifts from Facebook and
+                    Instagram shops.&nbsp;</p>
+            </div>
+        </div>
+        <div class="row">
+            {% for i in entries %}
+            <div class="col-lg-3 col-md-6 p-3">
+                <div class="hover text-white rounded">
+                    <img src="{{i.image_url}}" alt="" href="{{i.product_url}}">
+                    <div class="hover-overlay"></div>
+                    <div class="hover-content">
+                        <h6 class="text-uppercase font-weight-bold">{{i.product_name}}
+                        </h6>
+                        <p class="hover-description font-weight-light">price: HK$ {{i.product_price}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

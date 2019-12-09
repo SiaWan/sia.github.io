@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="py-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form action="/updateUser" method="post">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" class="form-control" id="email" name="email" value="{{current_user.email}}"
+                               disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" name="username"
+                               value="{{current_user.username}}"
+                               disabled>
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="subscribe" name="subscribe"
+                               {% if current_user.subscribe %}
+                               checked
+                               {% endif %}
+                               disabled
+                        >
+                        <label class="form-check-label" for="subscribe">Subscribe</label>
+                    </div>
+                    <button type="button" class="btn btn-primary" id="edit_btn">Edit</button>
+                    <button type="submit" class="btn btn-primary" id="save_btn" style="display: none">Save Change
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="py-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12"><a class="btn btn-outline-primary" href="/signout"><b>Sign Out</b>&nbsp;<i
+                    class="fa fa-fw fa-sign-out"></i> </a>
+                <a class="btn btn-outline-primary" data-toggle="modal" data-target="#confirm"><b>Delete Account</b>&nbsp;<i
+                        class="fa fa-fw fa-times"></i> </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="confirm" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirm to Delete</h5>
+                <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+            </div>
+            <div class="modal-body">
+                <p>Do you really want to delete this account?</p>
+            </div>
+            <div class="modal-footer">
+                <form action="/deleteUser" method="post">
+                    <button type="submit" class="btn btn-primary">Confirm</button>
+                </form>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // click edit
+    $("#edit_btn").click(function(){
+
+        // hide itself
+        $(this).hide();
+
+        // show save change button
+        $("#save_btn").show();
+
+        // enable all inputs
+        $("#username, #email, #subscribe").attr("disabled", false);
+
+    });
+
+
+</script>
+{% endblock %}
