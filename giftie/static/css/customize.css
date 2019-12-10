@@ -1,0 +1,88 @@
+/*
+customized class
+*/
+.hover {
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 60%;
+}
+
+.hover-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  background: rgba(0, 0, 0, 0);
+  transition: all 0.4s;
+}
+
+.hover img {
+  width: 105%;
+  position: absolute;
+  top: -1rem;
+  left: -5%;
+  transition: all 0.3s;
+}
+
+.hover-add {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5rem;
+  z-index: 100;
+  opacity: 0;
+  transition: all 0.4s;
+}
+
+.hover-vote {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.5rem;
+  z-index: 100;
+  opacity: 0;
+  transition: all 0.4s;
+}
+
+.hover-content {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  opacity: 0;
+  text-align: center;
+  transition: all 0.4s;
+}
+
+.hover:hover .hover-add {
+    opacity: 1;
+}
+
+.hover:hover .hover-vote {
+    opacity: 1;
+}
+
+.hover:hover .hover-content {
+  opacity: 1;
+  bottom: 1 rem;
+}
+
+.hover:hover img {
+  left: 0;
+}
+
+.hover:hover .hover-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.thumbnail {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+}

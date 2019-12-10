@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="py-5" id="gifts">
+    <div class="container">
+        <div class="row">
+            <div class="text-center mx-auto col-md-8">
+                <h1 class="mb-3 bg-light rounded text-primary py-1"><b>Our Gift Collection</b></h1>
+                <p class="lead">Tired of products in big shopping malls? Explore our special gifts from Facebook and
+                    Instagram shops.&nbsp;
+                    <br>
+                    For the current season, we are going to explore associations between gifts and personality!<br>
+                    For you better experience, please join our survey <a href="/survey">here</a>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1 col-xs-1 p-3">
+                <a id="prev"><i class="fa fa-chevron-left mx-auto" aria-hidden="true"></i></a>
+            </div>
+            <div class="col-sm-10 col-xs-10 p-3">
+                <dic class="row">
+                    <div class="col-sm-12 col-xs-12 p-3">
+                        <div class="row">
+                            <div class="col-sm-3 col-xs-3">
+                                <a href="{{url_for('gifts', personality=1)}}">
+                                    <h6 class="mx-auto rounded-pill text-center py-1"
+                                        style="background-color: #5eb7b7; color: white">
+                                        <b>perfectionist/follower</b>
+                                    </h6>
+                                </a>
+                            </div>
+                            <div class="col-sm-3 col-xs-3">
+                                <a href="{{url_for('gifts', personality=2)}}">
+                                    <h6 class="mx-auto rounded-pill text-center py-1"
+                                        style="background-color: #96d1c7;color: white"><b>dominator/commander</b></h6>
+                                </a>
+                            </div>
+                            <div class="col-sm-3 col-xs-3">
+                                <a href="{{url_for('gifts', personality=3)}}">
+                                    <h6 class="mx-auto rounded-pill text-center py-1"
+                                        style="background-color: #6bc5d2;color: white"><b>reserved/supporter</b></h6>
+                                </a>
+                            </div>
+                            <div class="col-sm-3 col-xs-3">
+                                <a href="{{url_for('gifts', personality=4)}}">
+                                    <h6 class="mx-auto rounded-pill text-center py-1"
+                                        style="background-color: #36b5b0;color: white"><b>extrovert/socialite</b></h6>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {% for i in entries %}
+                    <div class="col-sm-3 col-xs-4 p-2 product" style="display: none">
+                        <div class="hover text-white rounded">
+                            <img src="{{i.image_url}}" alt="" href="{{i.product_url}}">
+                            <div class="hover-overlay"></div>
+                            <a class="hover-add" data-toggle="tooltip" data-placement="right" title="add to MyCart"
+                               href="{{ url_for('add_order', product=i.product_id) }}">
+                                <i class="fa fa-plus fa-sm" aria-hidden="true"></i>
+                            </a>
+                            {% if p == "1" %}
+                            <a class="hover-vote" data-toggle="tooltip" data-placement="right"
+                               title="{{i.personality1}} voted it for perfectionist/follower personality"
+                               href="{{ url_for('add_order', product=i.product_id) }}">
+                                <i class="fa fa-heart" aria-hidden="true"></i>
+                            </a>
+                            {% endif %}
+                            {% if p == "2" %}
+                            <a class="hover-vote" data-toggle="tooltip" data-placement="right"
+                               title="{{i.personality2}} voted it for dominator/commander personality"
+                               href="{{ url_for('add_order', product=i.product_id) }}">
+                                <i class="fa fa-heart" aria-hidden="true"></i>
+                            </a>
+                            {% endif %}
+                            {% if p == "3" %}
+                            <a class="hover-vote" data-toggle="tooltip" data-placement="right"
+                               title="{{i.personality3}} voted it for reserved/supporter personality"
+                               href="{{ url_for('add_order', product=i.product_id) }}">
+                                <i class="fa fa-heart" aria-hidden="true"></i>
+                            </a>
+                            {% endif %}
+                            {% if p == "4" %}
+                            <a class="hover-vote" data-toggle="tooltip" data-placement="right"
+                               title="{{i.personality4}} voted it for extrovert/socialite personality"
+                               href="{{ url_for('add_order', product=i.product_id) }}">
+                                <i class="fa fa-heart" aria-hidden="true"></i>
+                            </a>
+                            {% endif %}
+                            <div class="hover-content">
+                                <small><b>{{i.product_name}}</b>
+                                    <br>
+                                    price: HK$ {{i.product_price}}
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </dic>
+            </div>
+            <div class="col-sm-1 col-xs-1 p-3">
+                <a id="next"><i class="fa fa-chevron-right fa-7x mx-auto" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+
+        products = $(".product");
+        len = products.length;
+        start = 0;
+        end = 8;
+        $(products.slice(start, end)).show();
+
+        $("#next").click(function(){
+            $(products.slice(start, end)).hide();
+            if (start < len && end < len){
+                start += 8;
+                end += 8;
+                }
+            $(products.slice(start, end)).show();
+        });
+
+        $("#prev").click(function(){
+            $(products.slice(start, end)).hide();
+            if (start > 0 && end > 0){
+                start -= 8;
+                end -= 8;
+                }
+            $(products.slice(start, end)).show();
+        });
+
+        });
+
+</script>
+{% endblock %}

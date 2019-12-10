@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+          type="text/css">
+    <link rel="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/customize.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"
+            style=""></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <title>Giftie</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-light">
+    <div class="container">
+        <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse"
+                data-target="#navbar7">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="row collapse navbar-collapse" id="navbar7">
+            <div class="col-sm-2 col-xs-12">
+                <a class="navbar-brand text-primary d-none d-md-block" href="/home">
+                    <i class="fa d-inline fa-lg fa-gift"></i>
+                    <b> GIFTIE</b>
+                </a>
+            </div>
+            <div class="col-sm-5 col-xs-12">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item mx-auto"><a class="nav-link" href="/about">About</a></li>
+                    <li class="nav-item mx-auto"><a class="nav-link" href="/gifts">Gifts</a></li>
+                    <li class="nav-item mx-auto"><a class="nav-link" href="/survey">Survey</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-5 col-xs-12">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item mx-auto">
+                        <a class="nav-link" href="">
+                            <i class="fa fa-lightbulb-o"></i>&nbsp Tips</a>
+                    </li>
+                    <li class="nav-item mx-auto"><a class="nav-link" href="{{url_for('order')}}">
+                        <i class="fa fa-shopping-cart"></i>&nbsp MyCart</a>
+                    </li>
+                    {% if current_user.is_authenticated %}
+                    <li class="nav-item mx-auto">
+                        <a href="/profile" class="nav-link"><i
+                                class="fa fa-user-circle"></i>&nbsp;{{current_user.username}}</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item mx-auto">
+                        <a href="/signin" class="nav-link"><i
+                                class="fa fa-sign-in"></i>&nbsp Sign in</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</nav>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div>
+    {% for message in messages %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+{% endwith %}
+{% block content %}{% endblock %}
+</body>
+</html>
+
+

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="py-5 text-center" id="survey">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 p-3">
+                <h1 class="mb-0">Take our survey now to help us improve!</h1>
+            </div>
+            <div class="col-md-3 align-items-center d-flex justify-content-center p-3"><a class="btn btn-primary btn-lg"
+                                                                                          href="https://ql.tc/N6Eyg5">Take
+                Survey</a></div>
+        </div>
+    </div>
+</div>
+<div class="py-5 text-center" id="tag">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 p-1">
+                <h1 class="mb-0">Could you help tag the following products!</h1>
+            </div>
+            <div class="col-md-6 p-3">
+                <img class="mx-auto" src="{{data.image_url}}" style="width:75%">
+                <p>
+                    <b>{{data.product_name}}</b>
+                    <br>
+                    HK$ {{data.product_price}}
+                </p>
+            </div>
+            <div class="col-md-6 p-3">
+                <form action="/updateGifts" method="post">
+                    <input type="text" name="product" value="{{data.product_id}}" hidden>
+                    <select name="tag" class="custom-select my-1">
+                        <option value=1>perfectionist/follower</option>
+                        <option value=2>dominator/commander</option>
+                        <option value=3>reserved/supporter</option>
+                        <option value=4>extrovert/socialite</option>
+                    </select>
+                    <button class="btn btn-primary" type="submit">OK</button>
+                    <button class="btn btn-primary" type="button" href="{{url_for('survey')}}">Another One</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

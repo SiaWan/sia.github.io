@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="py-5 text-center" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="w-100 bg-light rounded text-primary py-1" style=""><b>ABOUT</b></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="">Does sending a gift troubles you?</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="mx-auto col-md-10">
+                <iframe title="Survey Result" aria-label="Bar Chart" id="datawrapper-chart-X3cKC"
+                        src="https://datawrapper.dwcdn.net/X3cKC/3/" scrolling="no" frameborder="0"
+                        style="width: 0px; border: none; height: 147px; min-width: 100% !important;"
+                        height="146"></iframe>
+                <script type="text/javascript" style="">
+                    ! function() {
+                      "use strict";
+                      window.addEventListener("message", function(a) {
+                        if (void 0 !== a.data["datawrapper-height"])
+                          for (var e in a.data["datawrapper-height"]) {
+                            var t = document.getElementById("datawrapper-chart-" + e) || document.querySelector("iframe[src*='" + e + "']");
+                            t && (t.style.height = a.data["datawrapper-height"][e] + "px")
+                          }
+                      })
+                    }();
+                </script>
+                <p class="mt-2">We have collected opionions from 88 users, among them, 60 people agree that sending a
+                    gift is hard.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
